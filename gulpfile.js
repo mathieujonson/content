@@ -1,4 +1,8 @@
-var elixir = require('laravel-elixir');
+var elixir =  require('laravel-elixir');
+var gulp = require('gulp');
+var babel = require('gulp-babel');
+var uglify = require("gulp-uglify");
+
 
 /*
  |--------------------------------------------------------------------------
@@ -12,5 +16,13 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-    mix.sass('app.scss');
+    mix.sass('app.scss')
+       .scripts('app.js');
+});
+
+gulp.task('js', function() {
+  return gulp.src('resources/assets/**/*.js')
+      .pipe(babel({ presets: ['es2015'] }))
+      .pipe(uglify())
+      .pipe(gulp.dest('public/'));
 });
