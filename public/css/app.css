@@ -4,7 +4,7 @@ body {
 img {
   max-width: 100%; }
 
-.panel-body .welcome img {
+.panel-body.welcome img {
   margin-bottom: 1em; }
 
 /*# sourceMappingURL=app.css.map */
