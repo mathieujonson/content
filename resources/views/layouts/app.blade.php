@@ -50,7 +50,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Content Admin
+                    Content Administration
                 </a>
             </div>
 
