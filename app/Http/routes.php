@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/naturalizer', 'naturalizer@index');
+Route::get('/naturalizer', 'Naturalizer@index');
 
 // Authentication routes...
 // Route::get('auth/login', 'Auth\AuthController@getLogin');
