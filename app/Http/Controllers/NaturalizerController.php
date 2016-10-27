@@ -9,6 +9,7 @@ class NaturalizerController extends Controller
 {
     public function index()
     {
-        return view('naturalier');
+    	echo "blah";
+        return view('Naturalier');
     }
 }
