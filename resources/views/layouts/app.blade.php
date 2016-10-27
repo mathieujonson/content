@@ -63,7 +63,7 @@
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ url('/naturalizer') }}"><i class="fa fa-btn fa-sign-out"></i>Naturalizer.com</a></li>
+                            <li><a href="{{ url('/naturalizer') }}">Naturalizer.com</a></li>
                         </ul>
                     </li>
                 </ul>
