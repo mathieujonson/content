@@ -1,7 +1,1 @@
-var blah = {
-	go: () => {
-		console.log("hello world!");
-	}
-}
-blah.go();
-//# sourceMappingURL=app.js.map
+"use strict";var blah={go:function(){console.log("hello world!")}};blah.go();

@@ -26,36 +26,48 @@
 					eles.formContent.html(data.html);
 					eles.previewContent.html(tmpls[vars.contentType.replace('-', '')]);
 					eles.previewContainer.show();
-					funcs.setPreview(vars.contentType);
+
+					if(vars.contentType == 'simple-banner') {
+						funcs.initSimple();
+					}			
 				}
 			})
 			.fail(() => {
 				console.log('woah, something went horribly wrong...');
 			});
 		},
-		setPreview: (content) => {
-			if(content == 'simple-banner') {
-				// Grab the preview elements
-				eles.swBanner =        $('#previewSwBanner');
-				eles.bannerText =      $('#previewBannerText');
-				eles.exclusionText =   $('#previewExclusionText');
-				eles.exclusionToggle = $('#previewExclusionToggle');
+		toggleOther: (e) => {
+			var $target =    $(e.target), 
+			    radioGroup = $target.attr('name');
 
-
-				// Grab the CSS values
-				var bannerBackground = $('input[name="backgroundColor"]:checked').val(),
-				    bannerText =       $('input[name="mainFontColor"]:checked').val();
-
-				eles.swBanner.css({
-					'background-color':bannerBackground
-				});
-				eles.bannerText.css({
-					'color':bannerText
-				});
-				eles.exclusionToggle.css({
-					'color':bannerText
-				});
+			if($(`[name="${radioGroup}"]:checked`).val() == 'other') {
+				$target.parent().next('input[type="text"]').fadeIn();
 			}
+			else {
+				$target.parent().parent().find('.other').fadeOut();	
+			}
+		},
+		initSimple: () => {
+			// Grab the preview elements
+			eles.swBanner =        $('#previewSwBanner');
+			eles.bannerText =      $('#previewBannerText');
+			eles.exclusionText =   $('#previewExclusionText');
+			eles.exclusionToggle = $('#previewExclusionToggle');
+
+
+			// Grab the CSS values
+			var bannerBackground = $('input[name="backgroundColor"]:checked').val(),
+			    bannerText =       $('input[name="mainFontColor"]:checked').val();
+
+			eles.swBanner.css({
+				'background-color':bannerBackground
+			});
+			eles.bannerText.css({
+				'color':bannerText
+			});
+			eles.exclusionToggle.css({
+				'color':bannerText
+			});
 		}
 	};
 
@@ -72,12 +84,12 @@
 		simplebanner: () => {
 			return `<div id="previewSwBanner">
 						<div class="bannerWidth">
-							<div id="previewBannerText">Test Text, Remove!</div>
+							<div id="previewBannerText">&nbsp;</div>
 							<a href="#" id="previewExclusionToggle" onclick="$('#previewExclusionText').slideToggle(); return false;">details</a>
 						</div>
 					</div>
 					<div class="bannerWidth">
-						<div id="previewExclusionText">Test Exclusion Text!</div>
+						<div id="previewExclusionText">&nbsp;</div>
 					</div>
 					`;
 		}

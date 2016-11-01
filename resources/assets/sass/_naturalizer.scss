@@ -1,4 +1,4 @@
-input[type="radio"] {
+input[type="radio"]:not(#bgOther):not(#mainFontOther), #bgOtherText, #mainFontOtherText {
 	display:none;
 }
 .background, .fontColor {
@@ -8,6 +8,16 @@ input[type="radio"] {
 }
 .radioContainer {
 	display:inline-block;
+	&.otherContainer {
+		position:relative;
+		top:-12px;
+		label[for="bgOther"], label[for="mainFontOther"] {
+			border:none;
+		}
+		input[type="radio"]:checked ~ label {
+			border:none;
+		}
+	}
 	input[type="radio"] {
 		& ~ label {
 			border:1px solid #e7e7e7;
@@ -19,10 +29,28 @@ input[type="radio"] {
 	.pink {
 		background-color:#AB2270;
 	}
+	.darkBrown {
+		background-color:#5c5345;
+	}
+	.tan {
+		background-color:#dac3b7;
+	}
 	.maroon {
 		background-color:#702e3e;
 	}
-	.gray {
+	.darkTan {
+		background-color:#c9a892;
+	}
+	.lightGray {
+		background-color:#b1a7a2;
+	}
+	.darkBlue {
+		background-color:#13284c;
+	}
+	.darkGray {
+		background-color:#4c4c4c;
+	}
+	.bannerGray {
 		background-color:#d7cec7;
 	}
 	.white {

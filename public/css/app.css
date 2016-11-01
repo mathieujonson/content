@@ -1,4 +1,4 @@
-input[type="radio"] {
+input[type="radio"]:not(#bgOther):not(#mainFontOther), #bgOtherText, #mainFontOtherText {
   display: none; }
 
 .background, .fontColor {
@@ -8,15 +8,34 @@ input[type="radio"] {
 
 .radioContainer {
   display: inline-block; }
+  .radioContainer.otherContainer {
+    position: relative;
+    top: -12px; }
+    .radioContainer.otherContainer label[for="bgOther"], .radioContainer.otherContainer label[for="mainFontOther"] {
+      border: none; }
+    .radioContainer.otherContainer input[type="radio"]:checked ~ label {
+      border: none; }
   .radioContainer input[type="radio"] ~ label {
     border: 1px solid #e7e7e7; }
   .radioContainer input[type="radio"]:checked ~ label {
     border: 2px solid #000; }
   .radioContainer .pink {
     background-color: #AB2270; }
+  .radioContainer .darkBrown {
+    background-color: #5c5345; }
+  .radioContainer .tan {
+    background-color: #dac3b7; }
   .radioContainer .maroon {
     background-color: #702e3e; }
-  .radioContainer .gray {
+  .radioContainer .darkTan {
+    background-color: #c9a892; }
+  .radioContainer .lightGray {
+    background-color: #b1a7a2; }
+  .radioContainer .darkBlue {
+    background-color: #13284c; }
+  .radioContainer .darkGray {
+    background-color: #4c4c4c; }
+  .radioContainer .bannerGray {
     background-color: #d7cec7; }
   .radioContainer .white {
     background-color: #fff; }
