@@ -17,7 +17,6 @@ var uglify = require("gulp-uglify");
 
 elixir(function(mix) {
     mix.sass('app.scss')
-       .scripts('app.js');
 });
 
 gulp.task('js', function() {

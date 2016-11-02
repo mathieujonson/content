@@ -27,8 +27,14 @@
 					eles.previewContent.html(tmpls[vars.contentType.replace('-', '')]);
 					eles.previewContainer.show();
 
-					if(vars.contentType == 'simple-banner') {
-						funcs.initSimple();
+					// Init bootstrap popovers
+					$('[data-toggle="popover"]').popover({
+						placement: 'top',
+						trigger:   'hover'
+					});
+
+					if(vars.contentType == 'sitewide-banner') {
+						funcs.initSitewide();
 					}			
 				}
 			})
@@ -47,25 +53,27 @@
 				$target.parent().parent().find('.other').fadeOut();	
 			}
 		},
-		initSimple: () => {
+		initSitewide: () => {
 			// Grab the preview elements
-			eles.swBanner =        $('#previewSwBanner');
-			eles.bannerText =      $('#previewBannerText');
-			eles.exclusionText =   $('#previewExclusionText');
-			eles.exclusionToggle = $('#previewExclusionToggle');
+			eles.bannerText =             $('#bannerText');
+			eles.previewSwBanner =        $('#previewSwBanner');
+			eles.previewBannerText =      $('#previewBannerText');
+			eles.previewExclusionText =   $('#previewExclusionText');
+			eles.previewExclusionToggle = $('#previewExclusionToggle');
 
+			$('[name="backgroundColor"], [name="mainFontColor"]').on('click', funcs.toggleOther);
 
 			// Grab the CSS values
 			var bannerBackground = $('input[name="backgroundColor"]:checked').val(),
 			    bannerText =       $('input[name="mainFontColor"]:checked').val();
 
-			eles.swBanner.css({
+			eles.previewSwBanner.css({
 				'background-color':bannerBackground
 			});
 			eles.bannerText.css({
 				'color':bannerText
 			});
-			eles.exclusionToggle.css({
+			eles.previewExclusionToggle.css({
 				'color':bannerText
 			});
 		}

@@ -42,6 +42,23 @@ input[type="radio"]:not(#bgOther):not(#mainFontOther), #bgOtherText, #mainFontOt
   .radioContainer .black {
     background-color: #333; }
 
+.glyphicon-info-sign {
+  color: #5bc0de;
+  font-size: 10px;
+  position: relative;
+  top: -5px;
+  left: -2px;
+  padding: 2px;
+  cursor: pointer; }
+  .glyphicon-info-sign:hover {
+    color: #31b0d5; }
+
+.input-group-addon[aria-expanded="true"] {
+  background-color: #ddd; }
+
+.input-group-addon:hover {
+  cursor: pointer; }
+
 .previewContainer {
   display: none;
   background-color: #fff;
@@ -81,7 +98,7 @@ img {
   margin-bottom: 1em; }
 
 .fakeLabel {
-  display: block;
+  display: inline-block;
   max-width: 100%;
   margin-bottom: 5px;
   font-weight: 700; }

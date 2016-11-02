@@ -60,6 +60,26 @@ input[type="radio"]:not(#bgOther):not(#mainFontOther), #bgOtherText, #mainFontOt
 		background-color:#333;
 	}
 }
+.glyphicon-info-sign {
+	color:#5bc0de;
+	font-size: 10px;
+    position: relative;
+    top: -5px;
+    left:-2px;
+    padding:2px;
+    cursor:pointer;
+	&:hover {
+		color:#31b0d5;
+	}
+}
+.input-group-addon {
+	&[aria-expanded="true"] {
+		background-color:#ddd;
+	}
+	&:hover {
+		cursor:pointer;
+	}
+}
 .previewContainer {
 	display:none;
 	background-color:#fff;
@@ -69,8 +89,6 @@ input[type="radio"]:not(#bgOther):not(#mainFontOther), #bgOtherText, #mainFontOt
 		padding-left:15px;
 	}
 }
-
-
 .bannerWidth {
 	position:relative;
 	width:1300px;

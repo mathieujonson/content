@@ -14,8 +14,8 @@
 							<div class="typeContainer">
 								<select name="contentType" id="contentType" class="form-control">
 									<option value="">Select a type of content</option>
-									<option value="simple-banner">Simple Banner</option>
-									<option value="fancy-banner">Fancy Banner</option>
+									<option value="sitewide-banner">Sitewide Banner</option>
+									<option value="catalog-page">Catalog Page</option>
 								</select>
 							</div>
 						</div>
