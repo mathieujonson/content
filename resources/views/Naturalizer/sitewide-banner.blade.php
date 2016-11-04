@@ -16,7 +16,6 @@
 	<div class="col-sm-3">
 		<div class="form-group">
 			<span class="fakeLabel">Background Color:</span>
-			<span class="glyphicon glyphicon-info-sign" data-toggle="popover" title="Background Color" data-content="This is the main background color.  If you need a custom color, the the 'other' option provides a textbox for hex values"></span><br>
 			<div class="radioContainer">
 				<input type="radio" id="bgPink" name="backgroundColor" value="#AB2270" checked>
 				<label for="bgPink" class="background pink"></label>
@@ -53,17 +52,16 @@
 				<input type="radio" id="gray" name="backgroundColor" value="#d7cec7">
 				<label for="gray" class="background bannerGray"></label>
 			</div>
-			<div class="radioContainer otherContainer">
+			<!--<div class="radioContainer otherContainer">
 				<input type="radio" id="bgOther" name="backgroundColor" value="other">
 				<label for="bgOther">Other</label>
-			</div>
+			</div> -->
 			<input type="text" id="bgOtherText" class="form-control other" placeholder="E.g. #5c5345">
 		</div>
 	</div>
 	<div class="col-sm-3">
 		<div class="form-group">
 			<span class="fakeLabel">Font Color:</span>
-			<span class="glyphicon glyphicon-info-sign" data-toggle="popover" title="Main Font Color" data-content="This is the font color for the main banner text.  If you need a custom color, the the 'other' option provides a textbox for hex values"></span><br>
 			<div class="radioContainer">
 				<input type="radio" id="mainFontBlack" name="mainFontColor" value="#333">
 				<label for="mainFontBlack" class="fontColor black"></label>
@@ -104,32 +102,29 @@
 				<input type="radio" id="gray" name="mainFontColor" value="#d7cec7">
 				<label for="gray" class="background bannerGray"></label>
 			</div>
-			<div class="radioContainer otherContainer">
+			<!--<div class="radioContainer otherContainer">
 				<input type="radio" id="mainFontOther" name="mainFontColor" value="other">
 				<label for="mainFontOther">Other</label>
-			</div>
+			</div> -->
 			<input type="text" id="mainFontOtherText" class="form-control other" placeholder="E.g. #5c5345">
 		</div>
 	</div>
 	<div class="col-sm-2">
 		<div class="form-group">
 			<label for="mainFontSize">Font Size:</label>
-			<span class="glyphicon glyphicon-info-sign" data-toggle="popover" title="Font Size" data-content="Font size of the main banner text."></span>
 			<input type="range" id="mainFontSize" class="form-control" min="10" max="24" step="1">
 		</div>
 	</div>
 	<div class="col-sm-2">
 		<div class="form-group">
 			<label for="mainLineHeight">Line Height:</label>
-			<span class="glyphicon glyphicon-info-sign" data-toggle="popover" title="Line Height" data-content="Line height of the main banner text."></span>
 			<input type="range" id="mainLineHeight" class="form-control" min="1" max="3" step=".1">
 		</div>
 	</div>
 	<div class="col-sm-2">
 		<div class="form-group">
 			<label for="mainLetterSpacing">Letter Spacing:</label>
-			<span class="glyphicon glyphicon-info-sign" data-toggle="popover" title="Letter Spacing" data-content="Letter spacing of the main banner text."></span>
-			<input type="range" id="mainLetterSpacing" class="form-control" min="10" max="24" step="1">
+			<input type="range" id="mainLetterSpacing" class="form-control" min="0" max="2" step=".5" value="0">
 		</div>
 	</div>
 </div>
@@ -137,7 +132,7 @@
 	<div class="col-sm-12">
 		<div class="form-group">
 			<label for="bannerLink">Banner Link:</label>
-			<span class="glyphicon glyphicon-info-sign" data-toggle="popover" title="Banner Link" data-content="This is the link that wraps around the entire banner.  If no link is desired, leave it empty!"></span>
+			<span class="glyphicon glyphicon-info-sign" data-toggle="popover" title="Banner Link" data-content="This is the link that wraps around the entire banner.  For testing purposes, this will open in a new window.  The exported code will open the link in a new window.  If no link is desired, leave it empty!"></span>
 			<input type="text" id="bannerLink" placeholder="E.g. http://www.naturalizer.com/womens?icid=TopNav_Womens" class="form-control">
 		</div>
 	</div>
@@ -151,8 +146,7 @@
 		</div>
 	</div>
 </div>
-<div class="row">
-	
+<!--<div class="row">
 	<div class="col-sm-offset-8 col-sm-4">
 		<div class="form-group">
 			<span class="fakeLabel">Exclusion Font Color:</span>
@@ -167,4 +161,4 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div> -->
