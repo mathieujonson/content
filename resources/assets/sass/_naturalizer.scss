@@ -108,6 +108,7 @@ input[type="range"].form-control {
 }
 .bannerWidth {
 	max-width:1300px;
+	margin:0 auto;
 }
 .previewContainer {
 	min-height:200px;
@@ -116,7 +117,6 @@ input[type="range"].form-control {
 	display:flex;
 }
 #previewBannerText, #previewExclusionsText {
-	max-width:1300px;
 	text-align:center;
 	margin:0 auto;
 }
