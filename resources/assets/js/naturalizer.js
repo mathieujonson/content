@@ -44,17 +44,6 @@
 				console.log('woah, something went horribly wrong...');
 			});
 		},
-		toggleOther: (e) => {
-			var $target =    $(e.target), 
-			    radioGroup = $target.attr('name');
-
-			if($(`[name="${radioGroup}"]:checked`).val() == 'other') {
-				$target.parent().next('input[type="text"]').fadeIn();
-			}
-			else {
-				$target.parent().parent().find('.other').fadeOut();	
-			}
-		},
 		initSitewide: () => {
 			// Add the banner template markup
 			eles.previewContent.html(tmpls.sitewideBanner());
@@ -66,7 +55,12 @@
 			eles.mainLetterSpacing =      $('#mainLetterSpacing');
 			eles.backgroundColor =        $('input[name="backgroundColor"]');
 			eles.mainFontColor =          $('input[name="mainFontColor"]');
+			eles.exclusionFontSize =      $('#exclusionFontSize');
+			eles.exclusionLineHeight =    $('#exclusionLineHeight');
+			eles.exclusionLetterSpacing = $('#exclusionLetterSpacing');
 			eles.exclusionsText =         $('#exclusionsText');
+			eles.exclusionFontColor =     $('input[name="exclusionFontColor"]');
+			eles.exclusionBgColor =       $('input[name="exclusionBackgroundColor"]');
 			eles.previewSwBanner =        $('#previewSwBanner');
 			eles.previewBannerText =      $('#previewBannerText');
 			eles.previewExclusionsText =  $('#previewExclusionsText');
@@ -76,8 +70,10 @@
 			$('[name="backgroundColor"], [name="mainFontColor"]').on('click', funcs.toggleOther);
 
 			// Grab the default CSS values
-			var bannerBackground = $('input[name="backgroundColor"]:checked').val(),
-			    bannerText =       $('input[name="mainFontColor"]:checked').val();
+			var bannerBackground =   $('input[name="backgroundColor"]:checked').val(),
+			    bannerText =         $('input[name="mainFontColor"]:checked').val(),
+			    exclusionFontColor = $('input[name="exclusionFontColor"]:checked').val(),
+			    exclusionsBgColor =  $('input[name="exclusionBackgroundColor"]:checked').val();
 
 			// Set the default CSS values
 			eles.previewSwBanner.css({
@@ -91,6 +87,12 @@
 			eles.previewExclusionToggle.css({
 				'color':bannerText
 			});
+			eles.previewExclusionsText.css({
+				'color': exclusionFontColor 
+			});
+			eles.previewExclusionsText.css({
+				'background-color': exclusionsBgColor
+			});
 
 			// Add listeners to update the form
 			eles.bannerText.on('keyup', funcs.updateBannerText);
@@ -100,6 +102,22 @@
 			eles.backgroundColor.on('change', funcs.updateBackgroundColor);
 			eles.mainFontColor.on('change', funcs.updateMainFontColor);
 			eles.exclusionsText.on('keyup', funcs.updateExclusionsText);
+			eles.exclusionFontSize.on('change', funcs.updateExclusionFontSize);
+			eles.exclusionLineHeight.on('change', funcs.updateExclusionLineHeight);
+			eles.exclusionLetterSpacing.on('change', funcs.updateExclusionLetterSpacing);
+			eles.exclusionBgColor.on('change', funcs.updateExclusionBackgroundColor);
+			eles.exclusionFontColor.on('change', funcs.updateExclusionFontColor);			
+		},
+		toggleOther: (e) => {
+			var $target =    $(e.target), 
+			    radioGroup = $target.attr('name');
+
+			if($(`[name="${radioGroup}"]:checked`).val() == 'other') {
+				$target.parent().next('input[type="text"]').fadeIn();
+			}
+			else {
+				$target.parent().parent().find('.other').fadeOut();	
+			}
 		},
 		updateBannerText: () => {
 			// Never set it to empty, the div collases and hides everything
@@ -124,12 +142,31 @@
 			console.log($('input[name="mainFontColor"]:checked').val());
 			var color = $('input[name="mainFontColor"]:checked').val();
 			eles.previewBannerText.css({'color': color});
+			eles.previewExclusionToggle.css({'color': color});
 		},
 		updateExclusionsText: () => {
 			// Same as earlier...don't collapse it!
 			var updateText = (eles.exclusionsText.val() == '') ? '&nbsp;' : eles.exclusionsText.val();
 			eles.previewExclusionsText.text(updateText);
-		}
+		},
+		updateExclusionFontSize: () => {
+			eles.previewExclusionsText.css({'font-size':eles.exclusionFontSize.val() + 'px'});
+		},
+		updateExclusionLineHeight: () => {
+			eles.previewExclusionsText.css({'line-height': eles.exclusionLineHeight.val()});
+		},
+		updateExclusionLetterSpacing: () => {
+			eles.previewExclusionsText.css({'letter-spacing': eles.exclusionLetterSpacing.val() + 'px'});
+		},
+		updateExclusionBackgroundColor: () => {
+			var color = $('input[name="exclusionBackgroundColor"]:checked').val();
+			eles.previewExclusionsText.css({'background-color': color});
+		},
+		updateExclusionFontColor: () => {
+			var color = $('input[name="exclusionFontColor"]:checked').val();
+			eles.previewExclusionsText.css({'color': color});
+		},
+		
 	};
 
 	var tmpls = {

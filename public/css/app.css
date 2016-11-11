@@ -1,23 +1,27 @@
-input[type="radio"]:not(#bgOther):not(#mainFontOther), #bgOtherText, #mainFontOtherText {
+input[type="radio"]:not(#bgOther):not(#mainFontOther):not(#exBgOther):not(#exclusionFontOther),
+#bgOtherText, #mainFontOtherText, #exBgOtherText, #exclusionFontOtherText {
   display: none; }
 
-.background, .fontColor {
-  width: 25px;
-  height: 25px;
-  margin-right: 15px; }
+.form-color {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+  .form-color .radioContainer {
+    margin: 0 10px 10px 0; }
+  .form-color label {
+    width: 25px;
+    height: 25px; }
 
 input[type="range"].form-control {
   padding: 0; }
 
 .radioContainer {
   display: inline-block; }
-  .radioContainer.otherContainer {
-    position: relative;
-    top: -12px; }
-    .radioContainer.otherContainer label[for="bgOther"], .radioContainer.otherContainer label[for="mainFontOther"] {
-      border: none; }
-    .radioContainer.otherContainer input[type="radio"]:checked ~ label {
-      border: none; }
+  .radioContainer.otherContainer label[for="bgOther"], .radioContainer.otherContainer label[for="mainFontOther"], .radioContainer.otherContainer label[for="exBgOther"], .radioContainer.otherContainer label[for="exclusionFontOther"] {
+    border: none; }
+  .radioContainer.otherContainer input[type="radio"]:checked ~ label {
+    border: none; }
   .radioContainer input[type="radio"] ~ label {
     border: 1px solid #e7e7e7; }
   .radioContainer input[type="radio"]:checked ~ label {
@@ -62,7 +66,7 @@ input[type="range"].form-control {
 .input-group-addon:hover {
   cursor: pointer; }
 
-#bannerTextToolbar label, #bannerTextToolbar .fakeLabel {
+#bannerTextToolbar label, #bannerTextToolbar .fakeLabel, #exclusionTextToolbar label, #exclusionTextToolbar .fakeLabel {
   font-size: 10px; }
 
 .previewContainer {
@@ -95,10 +99,11 @@ input[type="range"].form-control {
 #previewBannerText {
   text-transform: uppercase;
   margin: 0 auto;
-  position: relative;
-  left: 17px; }
+  padding: 0 5em; }
 
 #previewExclusionsText {
+  padding: 5px 5em;
+  margin-top: -1px;
   display: none; }
 
 #previewExclusionToggle {
@@ -122,7 +127,7 @@ img {
 
 .fakeLabel {
   display: block;
-  max-width: 100%;
+  width: 100%;
   margin-bottom: 5px;
   font-weight: 700; }
 

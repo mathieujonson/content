@@ -1,10 +1,17 @@
-input[type="radio"]:not(#bgOther):not(#mainFontOther), #bgOtherText, #mainFontOtherText {
+input[type="radio"]:not(#bgOther):not(#mainFontOther):not(#exBgOther):not(#exclusionFontOther), 
+#bgOtherText, #mainFontOtherText, #exBgOtherText, #exclusionFontOtherText {
 	display:none;
 }
-.background, .fontColor {
-	width:25px;
-	height:25px;
-	margin-right:15px;
+.form-color {
+	display:flex;
+	flex-wrap:wrap;
+	.radioContainer {
+		margin:0 10px 10px 0;
+	}
+	label {
+		width:25px;
+		height:25px;
+	}
 }
 input[type="range"].form-control {
 	padding:0;
@@ -12,9 +19,7 @@ input[type="range"].form-control {
 .radioContainer {
 	display:inline-block;
 	&.otherContainer {
-		position:relative;
-		top:-12px;
-		label[for="bgOther"], label[for="mainFontOther"] {
+		label[for="bgOther"], label[for="mainFontOther"], label[for="exBgOther"], label[for="exclusionFontOther"] {
 			border:none;
 		}
 		input[type="radio"]:checked ~ label {
@@ -83,7 +88,7 @@ input[type="range"].form-control {
 		cursor:pointer;
 	}
 }
-#bannerTextToolbar {
+#bannerTextToolbar, #exclusionTextToolbar {
 	label, .fakeLabel {
 		font-size:10px;
 	}
@@ -118,10 +123,11 @@ input[type="range"].form-control {
 #previewBannerText {
 	text-transform:uppercase;
 	margin:0 auto;
-	position:relative;
-	left:17px;
+	padding:0 5em;
 }
 #previewExclusionsText {
+	padding:5px 5em;
+	margin-top:-1px;
 	display:none;
 }
 #previewExclusionToggle {
